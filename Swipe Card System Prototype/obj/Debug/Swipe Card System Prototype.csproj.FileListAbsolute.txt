@@ -1,0 +1,10 @@
+D:\CODING\College Work\Swipe Card System Prototype\obj\Debug\Swipe Card System Prototype.csproj.AssemblyReference.cache
+D:\CODING\College Work\Swipe Card System Prototype\obj\Debug\Swipe_Card_System_Prototype.Form1.resources
+D:\CODING\College Work\Swipe Card System Prototype\obj\Debug\Swipe_Card_System_Prototype.Properties.Resources.resources
+D:\CODING\College Work\Swipe Card System Prototype\obj\Debug\Swipe Card System Prototype.csproj.GenerateResource.cache
+D:\CODING\College Work\Swipe Card System Prototype\obj\Debug\Swipe Card System Prototype.csproj.CoreCompileInputs.cache
+D:\CODING\College Work\Swipe Card System Prototype\bin\Debug\Swipe Card System Prototype.exe.config
+D:\CODING\College Work\Swipe Card System Prototype\bin\Debug\Swipe Card System Prototype.exe
+D:\CODING\College Work\Swipe Card System Prototype\bin\Debug\Swipe Card System Prototype.pdb
+D:\CODING\College Work\Swipe Card System Prototype\obj\Debug\Swipe Card System Prototype.exe
+D:\CODING\College Work\Swipe Card System Prototype\obj\Debug\Swipe Card System Prototype.pdb

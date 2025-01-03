@@ -1,0 +1,38 @@
+2025-01-02 19:07:41: User 1 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 19:14:47: User 1 with Swipe Card 'Staff' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 19:18:50: User 1 with Swipe Card 'Staff' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 19:19:35: User 3 with Swipe Card 'Manager' attempted to access Room 3 (NORMAL) - Granted
+2025-01-02 19:20:48: User 1 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 19:27:23: User 1 with Swipe Card 'Student' attempted to access Room staff (NORMAL) - Denied
+2025-01-02 19:27:35: User 2 with Swipe Card 'Manager' attempted to access Room staff (NORMAL) - Granted
+2025-01-02 19:28:14: User 2 with Swipe Card 'Manager' attempted to access Room staff (Emergency ) - Granted
+2025-01-02 19:30:25: User 56 with Swipe Card 'Student' attempted to access Room 3 (NORMAL) - Denied
+2025-01-02 19:30:39: User 56 with Swipe Card 'Student' attempted to access Room 3 (NORMAL) - Denied
+2025-01-02 19:36:29: User 2 with Swipe Card 'Manager' attempted to access Room 1 (NORMAL) - Granted
+2025-01-02 19:36:40: User 1 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Granted
+2025-01-02 19:36:47: User 1 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 19:37:06: User 2 with Swipe Card 'Manager' attempted to access Room 1 (Emergency ) - Granted
+2025-01-02 19:49:33: User 1 with Swipe Card 'Manager' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 19:49:54: User 1 with Swipe Card 'Manager' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 20:24:40: User 1 with Swipe Card 'Student' attempted to access Room staff (NORMAL) - Granted
+2025-01-02 20:30:13: User 1 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 20:30:20: User 1 with Swipe Card 'Student' attempted to access Room 2 (NORMAL) - Denied
+2025-01-02 20:38:29: User 1 with Swipe Card 'Manager' attempted to access Room 1 (NORMAL) - Granted
+2025-01-02 20:38:39: User 2 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 21:56:07: User 1 with Swipe Card 'Staff' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 22:19:14: User 1 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 22:19:22: User 2 with Swipe Card 'Manager' attempted to access Room 1 (NORMAL) - Granted
+2025-01-02 22:19:44: User 2 with Swipe Card 'Manager' attempted to access Room 1 (Emergency ) - Denied
+2025-01-02 22:22:44: User 1 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 22:25:09: User 1 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Denied
+2025-01-02 22:37:40: User 1 with Swipe Card 'Student' attempted to access Room 1 (NORMAL) - Granted
+2025-01-02 22:44:57: User 1 with Swipe Card 'Staff' attempted to access Room lecture (NORMAL) - Granted
+2025-01-02 22:45:19: User 1 with Swipe Card 'Staff' attempted to access Room lecture (NORMAL) - Denied
+2025-01-02 22:45:39: User 1 with Swipe Card 'Staff' attempted to access Room secure (NORMAL) - Denied
+2025-01-02 22:46:11: User 1 with Swipe Card 'Staff' attempted to access Room lecture (Emergency ) - Denied
+2025-01-02 22:46:33: User 7 with Swipe Card 'Emergency Responder' attempted to access Room lecture (Emergency ) - Denied
+2025-01-02 22:46:51: User 7 with Swipe Card 'Emergency Responder' attempted to access Room lecture (Emergency ) - Denied
+2025-01-02 22:47:09: User 5 with Swipe Card 'Manager' attempted to access Room lecture (Emergency ) - Denied
+2025-01-02 22:47:35: User 5 with Swipe Card 'Manager' attempted to access Room lecture (Normal) - Granted
+2025-01-02 22:48:10: User 2 with Swipe Card 'Student' attempted to access Room lecture (Normal) - Granted
+2025-01-02 22:48:19: User 1 with Swipe Card 'Staff' attempted to access Room lecture (Normal) - Granted
