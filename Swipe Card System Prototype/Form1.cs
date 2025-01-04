@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,12 +16,26 @@ namespace Swipe_Card_System_Prototype
 
     public partial class Form1 : Form
     {
+
+        /// <summary>
+        /// List of all users in the swipe card system.
+        /// </summary>
         private List<User> users = new List<User>();     // List to store users
+
+
+        /// <summary>
+        /// List of all rooms managed within the swipe card system.
+        /// </summary>
         private List<Room> rooms = new List<Room>();    // List to store rooms
 
         private UserList userList;           // Observable user list
         private RoomList roomList = new RoomList();  // Observable room list
 
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Form1"/> class.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -51,10 +65,24 @@ namespace Swipe_Card_System_Prototype
 
 
 
+        /// <summary>
+        /// Represents a user in the swipe card system with a unique ID and swipe card type.
+        /// </summary>
         public class User
         {
+
+            /// <summary>
+            /// Gets or sets the unique identifier for the user.
+            /// </summary>
             public string UserID { get; set; }
+
+         
             public string Name { get; set; }
+
+
+            /// <summary>
+            /// Gets or sets the type of swipe card (e.g., Student, Manager, Visitor).
+            /// </summary>
             public string SwipeCardType { get; set; }  
 
             // Constructor
@@ -82,7 +110,9 @@ namespace Swipe_Card_System_Prototype
             }
         }
 
-
+        /// <summary>
+        /// Handles the event when the "Add User" button is clicked.
+        /// </summary>     
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             string userName = txtUserName.Text.Trim();
@@ -114,8 +144,9 @@ namespace Swipe_Card_System_Prototype
         }
 
 
-
-
+        /// <summary>
+        /// Handles the event when the "Remove User" button is clicked.
+        /// </summary>      
         private void btnRemoveUser_Click(object sender, EventArgs e) //This is my code to remove a user from the software
         {
             string userID = txtUserID.Text.Trim();
@@ -145,7 +176,9 @@ namespace Swipe_Card_System_Prototype
 
 
 
-
+        /// <summary>
+        /// Updates the user list in the UI by clearing existing items and adding all users from the users collection.
+        /// </summary>
         private void UpdateUserList()
         {
             if (lstUsers.InvokeRequired)
@@ -189,11 +222,27 @@ namespace Swipe_Card_System_Prototype
         #region Rooms
         //This is anything related to rooms
 
-
-        public class Room //I have added encapulation here to demonstrade Object oriented practices, as the room details may be private or sensitive data
+        /// <summary>
+        /// Represents a room in the swipe card system with its number, type, and current state (e.g., NORMAL, EMERGENCY).
+        /// </summary>
+        public class Room 
         {
+
+
+            /// <summary>
+            /// Gets or sets the unique number identifying the room.
+            /// </summary>            
             private string roomNumber;
+
+
+            /// <summary>
+            /// Gets or sets the type of the room (e.g., Lecture Hall, Teaching Room).
+            /// </summary>
             private string roomType;
+
+            /// <summary>
+            /// Gets or sets the current state of the room (e.g., NORMAL, EMERGENCY).
+            /// </summary>
             private string state;
 
             public string RoomNumber
@@ -247,8 +296,10 @@ namespace Swipe_Card_System_Prototype
         }
 
 
-
-        private void btnAddRoom_Click(object sender, EventArgs e) // This is my code to add rooms to the software
+        /// <summary>
+        /// Adds a new room to the software's room list.
+        /// </summary>     
+        private void btnAddRoom_Click(object sender, EventArgs e) 
         {
             
             string roomNumber = txtRoomNumber.Text.Trim();
@@ -283,8 +334,10 @@ namespace Swipe_Card_System_Prototype
 
 
 
-
-        private void btnRemoveRoom_Click(object sender, EventArgs e) //This is my code to remove rooms from the software
+        /// <summary>
+        /// Removes a room from the software's room list based on the provided Room Number.
+        /// </summary>        
+        private void btnRemoveRoom_Click(object sender, EventArgs e) 
         {
             // Get room number from input
             string roomNumber = txtRoomNumber.Text.Trim();
@@ -318,8 +371,10 @@ namespace Swipe_Card_System_Prototype
 
 
 
-
-        private void UpdateRoomList()//for updating room list
+        /// <summary>
+        /// Updates the room list displayed in the ListBox control with the latest room data.
+        /// </summary>
+        private void UpdateRoomList()
         {
             if (lstRooms.InvokeRequired)
             {
@@ -349,7 +404,9 @@ namespace Swipe_Card_System_Prototype
 
 
 
-
+        /// <summary>
+        /// Updates the state of a room (normal or emergency) based on the provided room number and selected state.
+        /// </summary>      
         private void btnUpdateRoomState_Click(object sender, EventArgs e) //This is my code to change the room state between normal and emergency
         {
             // Get room number and selected state
@@ -394,7 +451,12 @@ namespace Swipe_Card_System_Prototype
 
 
         #region swipe simulation 
-        //This is anything related to simulating card swipes
+       
+        /// <summary>
+        /// Simulates a swipe card access attempt for a user to a specific room at a given time.
+        /// </summary>
+        /// <param name="sender">The object that triggered the event.</param>
+        /// <param name="e">Event data containing user input and control states.</param>
 
 
         private void btnSimulateSwipe_Click(object sender, EventArgs e)
@@ -449,61 +511,65 @@ namespace Swipe_Card_System_Prototype
 
 
 
-        // This is my code that uses a timing method to set each swipecards acces times in each mode
+                    // This is my code that uses a timing method to set each swipecards acces times in each mode
 
-        Dictionary<string, (TimeSpan start, TimeSpan end)> managerAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
-{
-    { "normal", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) }, 
-    { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
-};
+                    Dictionary<string, (TimeSpan start, TimeSpan end)> managerAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
+            {
+                { "normal", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) }, 
+                { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
+            };
 
-        Dictionary<string, (TimeSpan start, TimeSpan end)> staffAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
-{
-    { "normal", (new TimeSpan(5, 30, 0), new TimeSpan(23, 59, 59)) }, 
-    { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
-};
+                    Dictionary<string, (TimeSpan start, TimeSpan end)> staffAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
+            {
+                { "normal", (new TimeSpan(5, 30, 0), new TimeSpan(23, 59, 59)) }, 
+                { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
+            };
 
-        Dictionary<string, (TimeSpan start, TimeSpan end)> studentAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
-{
-    { "normal", (new TimeSpan(8, 30, 0), new TimeSpan(22, 0, 0)) }, 
-    { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
-};
+                    Dictionary<string, (TimeSpan start, TimeSpan end)> studentAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
+            {
+                { "normal", (new TimeSpan(8, 30, 0), new TimeSpan(22, 0, 0)) }, 
+                { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
+            };
 
-        Dictionary<string, (TimeSpan start, TimeSpan end)> visitorAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
-{
-    { "normal", (new TimeSpan(8, 30, 0), new TimeSpan(22, 0, 0)) }, 
-    { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
-};
+                    Dictionary<string, (TimeSpan start, TimeSpan end)> visitorAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
+            {
+                { "normal", (new TimeSpan(8, 30, 0), new TimeSpan(22, 0, 0)) }, 
+                { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
+            };
 
-        Dictionary<string, (TimeSpan start, TimeSpan end)> cleanerAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
-{
-    { "normalMorning", (new TimeSpan(5, 30, 0), new TimeSpan(10, 30, 0)) }, // Morning access for cleaners
-    { "normalEvening", (new TimeSpan(17, 30, 0), new TimeSpan(22, 30, 0)) }, // Evening access for cleaners
-    { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
-};
+                    Dictionary<string, (TimeSpan start, TimeSpan end)> cleanerAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
+            {
+                { "normalMorning", (new TimeSpan(5, 30, 0), new TimeSpan(10, 30, 0)) }, // Morning access for cleaners
+                { "normalEvening", (new TimeSpan(17, 30, 0), new TimeSpan(22, 30, 0)) }, // Evening access for cleaners
+                { "emergency", (TimeSpan.Zero, TimeSpan.Zero) } 
+            };
 
-        Dictionary<string, (TimeSpan start, TimeSpan end)> emergencyResponderAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
-{
-    { "normal", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) }, 
-    { "emergency", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) } 
-};
+                    Dictionary<string, (TimeSpan start, TimeSpan end)> emergencyResponderAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
+            {
+                { "normal", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) }, 
+                { "emergency", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) } 
+            };
 
-        Dictionary<string, (TimeSpan start, TimeSpan end)> securityAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
-{
-    { "normal", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) }, 
-    { "emergency", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) } 
-};
-
-
-
-
-      
+                    Dictionary<string, (TimeSpan start, TimeSpan end)> securityAccessTimes = new Dictionary<string, (TimeSpan, TimeSpan)>
+            {
+                { "normal", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) }, 
+                { "emergency", (new TimeSpan(0,00,0), new TimeSpan(23,59,0)) } 
+            };
 
 
 
 
-        private bool CheckAccess(User user, Room room, string swipeTime) //This is my code to check access based on what data is being simulated in the swipe.
-        //it also includes a section for debugging to show the reasons behind why certain swipes may have been denied or granted
+
+       
+        /// <summary>
+        /// Checks whether a user has access to a room based on user role, room state, and swipe time.
+        /// </summary>
+        /// <param name="user">The user attempting access.</param>
+        /// <param name="room">The room for which access is being checked.</param>
+        /// <param name="swipeTime">The swipe time in 'HH:mm' format.</param>
+        /// <returns>True if access is granted, otherwise false.</returns>
+
+        public bool CheckAccess(User user, Room room, string swipeTime) 
         {
             // Debugging Logs
             Console.WriteLine($"Checking access for User: {user.SwipeCardType}, Room: {room.RoomType}, Time: {swipeTime}, State: {room.State}");
@@ -673,9 +739,16 @@ namespace Swipe_Card_System_Prototype
 
 
         #region Logging
+        
+        /// <summary>
+        /// Logs the details of a swipe attempt to access a room, including user ID, swipe card type, room details, and access decision.
+        /// </summary>
+        /// <param name="userId">The unique identifier of the user.</param>
+        /// <param name="swipeCardType">The type of swipe card .</param>
+        /// <param name="room">The room being accessed.</param>
+        /// <param name="accessGranted">Whether the access was granted or denied.</param>
 
-
-        private void LogSwipe(string userId, string swipeCardType, Room room, bool accessGranted) //this is my code to log the details of each swipe
+        private void LogSwipe(string userId, string swipeCardType, Room room, bool accessGranted) 
         {
             string logDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
 
@@ -691,10 +764,12 @@ namespace Swipe_Card_System_Prototype
             File.AppendAllText(logFilePath, logEntry + Environment.NewLine);
         }
 
-
-
-
-        private void LoadLogs() //this is my code to bring the code from the project folder and display them on the logs page of the form
+       
+        
+        /// <summary>
+        /// Loads and displays logs from the room access log files.
+        /// </summary>
+        public void LoadLogs() 
         {
             string logDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
 
@@ -722,11 +797,16 @@ namespace Swipe_Card_System_Prototype
         }
 
 
+
+        /// <summary>
+        /// Event handler for the button click to load and display logs.
+        /// </summary>  
         private void btnLoadLogs_Click(object sender, EventArgs e) //this code simply updates the log when the button is pressed
         {
             LoadLogs();
         }
 
+      
     }
 
 
